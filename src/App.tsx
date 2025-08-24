@@ -25,14 +25,6 @@ function App() {
             content: [
                 { type: "date", text: "Ngày 24/08/2025" },
                 { type: "greeting", text: "Thu Huyền thân mến," },
-                {
-                    type: "paragraph",
-                    text: "",
-                },
-                {
-                    type: "paragraph",
-                    text: "",
-                },
                 { type: "signature", text: "Văn Thanh" },
             ],
         },
