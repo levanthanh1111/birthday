@@ -1,9 +1,19 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import "./index.css"; // để import font
+import "./index.css";
+type LetterBlock = {
+    type: "date" | "greeting" | "paragraph" | "signature";
+    text: string;
+};
+
+type Letter = {
+    date: string;
+    content: LetterBlock[];
+};
 
 function App() {
-    const letters = [
+    // ---- Danh sách thư ----
+    const letters: Letter[] = [
         {
             date: "Ngày 16/08/2025",
             content: [
@@ -23,14 +33,13 @@ function App() {
         {
             date: "Ngày 24/08/2025",
             content: [
-                { type: "date", text: "Ngày 24/08/2025" },
-                { type: "greeting", text: "Thu Huyền thân mến," },
-                { type: "signature", text: "Văn Thanh" },
+
             ],
         },
     ];
 
-    const [selectedLetter, setSelectedLetter] = useState(null);
+    // ---- State lưu thư đang mở ----
+    const [selectedLetter, setSelectedLetter] = useState<Letter | null>(null);
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-pink-50 to-yellow-50 flex flex-col items-center justify-center p-6">
@@ -65,21 +74,27 @@ function App() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="mt-10 bg-white p-10 rounded-2xl shadow-xl max-w-2xl text-gray-800 leading-relaxed text-left whitespace-pre-wrap border border-yellow-200"
+                    className="mt-10 bg-white p-10 rounded-2xl shadow-xl max-w-2xl text-gray-800 leading-relaxed text-left border border-yellow-200"
                 >
-                    {selectedLetter.content.map((block, idx) => {
-                        if (block.type === "paragraph" && block.text.trim() === "") return null;
+                    {selectedLetter.content.map((block: LetterBlock, idx: number) => {
+                        if (!block.text.trim()) return null; // bỏ block rỗng
 
                         if (block.type === "date") {
                             return (
-                                <p key={idx} className="font-handwriting font-bold mb-6 text-lg">
+                                <p
+                                    key={idx}
+                                    className="font-handwriting font-bold mb-6 text-lg text-right"
+                                >
                                     {block.text}
                                 </p>
                             );
                         }
                         if (block.type === "greeting") {
                             return (
-                                <p key={idx} className="font-handwriting italic mb-4 text-lg">
+                                <p
+                                    key={idx}
+                                    className="font-handwriting italic mb-6 text-lg"
+                                >
                                     {block.text}
                                 </p>
                             );
@@ -96,7 +111,10 @@ function App() {
                         }
                         if (block.type === "signature") {
                             return (
-                                <p key={idx} className="font-handwriting italic mt-8 text-lg">
+                                <p
+                                    key={idx}
+                                    className="font-handwriting italic mt-10 text-lg text-right"
+                                >
                                     {block.text}
                                 </p>
                             );
@@ -116,9 +134,7 @@ function App() {
                 </motion.div>
             )}
 
-            <p className="mt-10 text-sm text-gray-500 italic">
-                — From Văn Thanh 👨‍💻
-            </p>
+            <p className="mt-10 text-sm text-gray-500 italic">— From Văn Thanh 👨‍💻</p>
         </div>
     );
 }
