@@ -76,6 +76,8 @@ function App() {
                     className="mt-10 bg-white p-10 rounded-2xl shadow-xl max-w-2xl text-gray-800 leading-relaxed text-left whitespace-pre-wrap border border-yellow-200"
                 >
                     {selectedLetter.content.map((block, idx) => {
+                        if (block.type === "paragraph" && block.text.trim() === "") return null;
+
                         if (block.type === "date") {
                             return (
                                 <p key={idx} className="font-handwriting font-bold mb-6 text-lg">
