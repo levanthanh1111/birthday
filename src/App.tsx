@@ -33,7 +33,17 @@ function App() {
         {
             date: "Ngày 24/08/2025",
             content: [
-
+                { type: "date", text: "Ngày 24/08/2025" },
+                { type: "greeting", text: "Thu Huyền thân mến," },
+                {
+                    type: "paragraph",
+                    text: "Hôm nay cũng tròn 1 tháng từ khi mình biết đến cậu. Từ lần đầu trò chuyện, rồi buổi gặp mặt đầu tiên ở quán Acoustic, đến những lần ở quán Rooftop cafe sau đó, mọi thứ đến rất nhẹ nhàng nhưng để lại trong mình nhiều cảm xúc khó quên.",
+                },
+                {
+                    type: "paragraph",
+                    text: "Mình thật sự trân trọng sự hiện diện của cậu trong cuộc sống và mong rằng chúng ta sẽ có thêm nhiều kỷ niệm đẹp cùng nhau.",
+                },
+                { type: "signature", text: "Rùa" },
             ],
         },
     ];
