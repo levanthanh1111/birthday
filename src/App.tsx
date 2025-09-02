@@ -46,6 +46,34 @@ function App() {
                 { type: "signature", text: "Rùa" },
             ],
         },
+        {
+            date: "Ngày 02/09/2025",
+            content: [
+                { type: "date", text: "Ngày 02/09/2025" },
+                { type: "greeting", text: "Thu Huyền à," },
+                {
+                    type: "paragraph",
+                    text: "Thư này anh viết từ hôm 31/8, một ngày cuối tháng tám ý nghĩa, ngày mà em đã đồng ý.",
+                },
+                {
+                    type: "paragraph",
+                    text: "Cảm ơn em đã xuất hiện, mọi thứ với anh thật kỳ diệu. Ngày em đến gần anh rất nhẹ nhàng, cho anh biết thế nào là yêu thương, là ấm áp.",
+                },
+                {
+                    type: "paragraph",
+                    text: "Những lúc ở cạnh em thật đặc biệt. Mọi thứ trở nên ấm áp, anh chỉ muốn được nhìn em nhiều hơn, ngắm nụ cười và cả hàm răng xinh xắn ấy 😄. Cảm giác ấy thật yên bình, không biết diễn tả như thế nào, có thể là như thời gian cũng trôi chậm lại.",
+                },
+                {
+                    type: "paragraph",
+                    text: "Cảm ơn em — cô gái có giọng nói nhẹ nhàng mà vẫn pha chút cá tính.",
+                },
+                {
+                    type: "paragraph",
+                    text: "Cảm ơn em đã xuất hiện và cảm ơn em đã đồng ý.",
+                },
+                { type: "signature", text: "Anh yêu bé" },
+            ],
+        },
     ];
 
     // ---- State lưu thư đang mở ----
