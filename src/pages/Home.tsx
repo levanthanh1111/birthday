@@ -83,6 +83,12 @@ export default function Home() {
             <div className="sticky top-0 z-10 backdrop-blur bg-white/60 border-b border-yellow-100">
                 <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-center">
                     <Link
+                        to="/women-day"
+                        className="inline-flex items-center gap-2 bg-pink-600 hover:bg-pink-700 text-white font-semibold px-6 py-3 rounded-2xl shadow-lg transition transform hover:scale-[1.02]"
+                    >
+                        🌸 8/3
+                    </Link>
+                    <Link
                         to="/noel"
                         className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-2xl shadow-lg transition transform hover:scale-[1.02]"
                     >
